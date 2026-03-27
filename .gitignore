@@ -1,0 +1,9 @@
+# Ignorar la carpeta de entorno virtual
+venv/
+env/
+
+# Ignorar carpetas de caché de Python
+__pycache__/
+
+# Ignorar una carpeta específica de datos pesados
+data_raw/
