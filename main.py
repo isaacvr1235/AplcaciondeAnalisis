@@ -1,29 +1,36 @@
-from pipeline.pipeline import Pipeline
+import os
 from data.data import DataLoader
-from transformers.transformers import ProcesadorDatos
-from models.models import ModeloRegresionLineal
-from evaluation.metrics import Metricas
 
-class Main:
-    def main(self):
-        loader = DataLoader()
-        dataset = loader.cargar("estudiantes (1).csv")
+def main():
+    print("Iniciando el Pipeline de Ciencia de Datos...\n")
+    
+    loader = DataLoader()
 
-        pipeline = Pipeline()
-        
-        paso_limpieza = ProcesadorDatos(accion='limpieza', metodo=2, columnas=['Edad', 'Promedio'])
-        pipeline.agregar_paso(paso_limpieza)
+    ruta_descargas = r"C:\Users\Isaac\Downloads"
+    ruta_estudiantes = os.path.join(ruta_descargas, "estudiantes (1).csv")
+    ruta_adicional = os.path.join(ruta_descargas, "otro_dataset.csv") 
 
-        paso_escalado = ProcesadorDatos(accion='scaler', metodo=1, columnas=['Edad', 'Promedio'])
-        pipeline.agregar_paso(paso_escalado)
+    print("-" * 40)
+    print("PRUEBA 1: Carga de estudiantes.csv")
+    print("-" * 40)
+    try:
+        dataset_estudiantes = loader.cargar_csv(ruta_estudiantes)
+        print("\nVista previa de los datos (head):")
+        print(dataset_estudiantes.head())
+        print(f"\nMetadatos: {dataset_estudiantes.n_filas} filas, {dataset_estudiantes.n_columnas} columnas.")
+    except Exception as e:
+        print(e)
 
-        modelo = ModeloRegresionLineal()
-        metricas = Metricas()
+    print("\n" + "-" * 40)
+    print("PRUEBA 2: Carga de archivo adicional")
+    print("-" * 40)
+    try:
+        dataset_adicional = loader.cargar_csv(ruta_adicional)
+        print("\nVista previa de los datos (head):")
+        print(dataset_adicional.head())
+        print(f"\nMetadatos: {dataset_adicional.n_filas} filas, {dataset_adicional.n_columnas} columnas.")
+    except Exception as e:
+        print(e)
 
-        pipeline.modelo = modelo
-        pipeline.metricas = metricas
-
-        pipeline.ejecutar(dataset)
-
-if _name_ == "_main_":
-    Main().main()
+if __name__ == "__main__":
+    main()
