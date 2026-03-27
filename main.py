@@ -6,9 +6,9 @@ def main():
     
     loader = DataLoader()
 
-    ruta_descargas = r"C:\Users\Isaac\Downloads"
-    ruta_estudiantes = os.path.join(ruta_descargas, "estudiantes (1).csv")
-    ruta_adicional = os.path.join(ruta_descargas, "otro_dataset.csv") 
+    ruta_descargas = r"C:\Users\Isaac\Downloads\datasets"
+    ruta_estudiantes = os.path.join(ruta_descargas_dataset, "estudiantes (1).csv")
+    ruta_adicional = os.path.join(ruta_descargas_datasets, "StudentsPerformance.csv") 
 
     print("-" * 40)
     print("PRUEBA 1: Carga de estudiantes.csv")
