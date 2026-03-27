@@ -1,34 +1,32 @@
-class Transformacion:
-
-    def fit(self, dataset):
-        pass
-
-    def transform(self, dataset):
-        return dataset
+class ProcesadorDatos:
+    def _init_(self, accion, metodo, columnas=None):
+        self.accion = accion
+        self.metodo = metodo
+        self.columnas = columnas
 
     def fit_transform(self, dataset):
-        self.fit(dataset)
-        return self.transform(dataset)
+        df = dataset.copy()
+        cols = self.columnas if self.columnas is not None else df.columns
 
+        if self.accion == 'limpieza':
+            df[cols] = self.limpieza(df[cols], self.metodo)
+        elif self.accion == 'scaler':
+            df[cols] = self.scaler(df[cols], self.metodo)
 
-class LimpiadorNulos(Transformacion):
+        return df
 
-    def fit(self, dataset):
-        pass
+    def limpieza(self, dataframe, metodo):
+        if metodo == 1:
+            pass
+        elif metodo == 2:
+            pass
+        return dataframe
 
-    def transform(self, dataset):
-        pass
+    def scaler(self, dataframe, metodo):
+        if metodo == 1:
+            pass
+        elif metodo == 2:
+            pass
+        return dataframe
 
-
-class Scaler(Transformacion):
-
-    def _init_(self):
-        self.mean = None
-        self.std = None
-
-    def fit(self, dataset):
-        pass
-
-    def transform(self, dataset):
-        pass
     
