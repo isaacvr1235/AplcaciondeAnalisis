@@ -1,0 +1,454 @@
+[
+  {
+    "_id": "EST-1001",
+    "datos_personales": {
+      "nombre": "Andrés",
+      "apellido": "Martínez",
+      "edad": 21,
+      "correo": "andrés.martínez1@universidad.edu.mx"
+    },
+    "academico": {
+      "carrera": "Medicina",
+      "semestre": 12,
+      "promedio": 6.41,
+      "materias_cursadas": [
+        "Base de Datos",
+        "Química",
+        "Física"
+      ]
+    },
+    "contacto": {
+      "telefono": "5583197857",
+      "direccion": {
+        "calle": "Calle 23 #303",
+        "ciudad": "Puebla",
+        "codigo_postal": "14165"
+      }
+    },
+    "fecha_inscripcion": "2020-03-02",
+    "activo": true
+  },
+  {
+    "_id": "EST-1002",
+    "datos_personales": {
+      "nombre": "Lucía",
+      "apellido": "Hernández",
+      "edad": 24,
+      "correo": "lucía.hernández2@universidad.edu.mx"
+    },
+    "academico": {
+      "carrera": "Derecho",
+      "semestre": 8,
+      "promedio": 8.36,
+      "materias_cursadas": [
+        "Economía",
+        "Física",
+        "Base de Datos"
+      ]
+    },
+    "contacto": {
+      "telefono": "5510872248",
+      "direccion": {
+        "calle": "Calle 195 #413",
+        "ciudad": "Guadalajara",
+        "codigo_postal": "65392"
+      }
+    },
+    "fecha_inscripcion": "2021-11-27",
+    "activo": true
+  },
+  {
+    "_id": "EST-1003",
+    "datos_personales": {
+      "nombre": "Carlos",
+      "apellido": "Hernández",
+      "edad": 23,
+      "correo": "carlos.hernández3@universidad.edu.mx"
+    },
+    "academico": {
+      "carrera": "Física",
+      "semestre": 5,
+      "promedio": 9.23,
+      "materias_cursadas": [
+        "Álgebra",
+        "Base de Datos",
+        "Inglés",
+        "Estadística",
+        "Historia"
+      ]
+    },
+    "contacto": {
+      "telefono": "5571662963",
+      "direccion": {
+        "calle": "Calle 138 #64",
+        "ciudad": "Puebla",
+        "codigo_postal": "20328"
+      }
+    },
+    "fecha_inscripcion": "2023-02-04",
+    "activo": true
+  },
+  {
+    "_id": "EST-1004",
+    "datos_personales": {
+      "nombre": "Isabella",
+      "apellido": "Flores",
+      "edad": 30,
+      "correo": "isabella.flores4@universidad.edu.mx"
+    },
+    "academico": {
+      "carrera": "Arquitectura",
+      "semestre": 2,
+      "promedio": 9.42,
+      "materias_cursadas": [
+        "Biología",
+        "Física",
+        "Álgebra",
+        "Cálculo",
+        "Estadística"
+      ]
+    },
+    "contacto": {
+      "telefono": "5523556182",
+      "direccion": {
+        "calle": "Calle 98 #143",
+        "ciudad": "Puebla",
+        "codigo_postal": "93320"
+      }
+    },
+    "fecha_inscripcion": "2024-09-04",
+    "activo": true
+  },
+  {
+    "_id": "EST-1005",
+    "datos_personales": {
+      "nombre": "Carlos",
+      "apellido": "Rodríguez",
+      "edad": 26,
+      "correo": "carlos.rodríguez5@universidad.edu.mx"
+    },
+    "academico": {
+      "carrera": "Derecho",
+      "semestre": 3,
+      "promedio": 7.85,
+      "materias_cursadas": [
+        "Física",
+        "Estadística",
+        "Química",
+        "Álgebra",
+        "Programación"
+      ]
+    },
+    "contacto": {
+      "telefono": "5546231783",
+      "direccion": {
+        "calle": "Calle 164 #353",
+        "ciudad": "Querétaro",
+        "codigo_postal": "38785"
+      }
+    },
+    "fecha_inscripcion": "2023-11-03",
+    "activo": true
+  },
+  {
+    "_id": "EST-1006",
+    "datos_personales": {
+      "nombre": "Isabella",
+      "apellido": "Gómez",
+      "edad": 24,
+      "correo": "isabella.gómez6@universidad.edu.mx"
+    },
+    "academico": {
+      "carrera": "Arquitectura",
+      "semestre": 2,
+      "promedio": 6.84,
+      "materias_cursadas": [
+        "Física",
+        "Cálculo",
+        "Historia"
+      ]
+    },
+    "contacto": {
+      "telefono": "5586125617",
+      "direccion": {
+        "calle": "Calle 184 #162",
+        "ciudad": "Guadalajara",
+        "codigo_postal": "95909"
+      }
+    },
+    "fecha_inscripcion": "2022-10-19",
+    "activo": false
+  },
+  {
+    "_id": "EST-1007",
+    "datos_personales": {
+      "nombre": "Ricardo",
+      "apellido": "Morales",
+      "edad": 27,
+      "correo": "ricardo.morales7@universidad.edu.mx"
+    },
+    "academico": {
+      "carrera": "Contaduría",
+      "semestre": 10,
+      "promedio": 7.6,
+      "materias_cursadas": [
+        "Programación",
+        "Química",
+        "Base de Datos",
+        "Física",
+        "Estadística",
+        "Historia"
+      ]
+    },
+    "contacto": {
+      "telefono": "5539436733",
+      "direccion": {
+        "calle": "Calle 36 #261",
+        "ciudad": "Puebla",
+        "codigo_postal": "21915"
+      }
+    },
+    "fecha_inscripcion": "2024-03-27",
+    "activo": true
+  },
+  {
+    "_id": "EST-1008",
+    "datos_personales": {
+      "nombre": "Isabella",
+      "apellido": "Martínez",
+      "edad": 24,
+      "correo": "isabella.martínez8@universidad.edu.mx"
+    },
+    "academico": {
+      "carrera": "Contaduría",
+      "semestre": 10,
+      "promedio": 9.98,
+      "materias_cursadas": [
+        "Estadística",
+        "Programación",
+        "Inglés",
+        "Álgebra"
+      ]
+    },
+    "contacto": {
+      "telefono": "5581016525",
+      "direccion": {
+        "calle": "Calle 65 #498",
+        "ciudad": "Querétaro",
+        "codigo_postal": "11504"
+      }
+    },
+    "fecha_inscripcion": "2023-10-25",
+    "activo": true
+  },
+  {
+    "_id": "EST-1009",
+    "datos_personales": {
+      "nombre": "Andrés",
+      "apellido": "Morales",
+      "edad": 20,
+      "correo": "andrés.morales9@universidad.edu.mx"
+    },
+    "academico": {
+      "carrera": "Comunicación",
+      "semestre": 1,
+      "promedio": 9.82,
+      "materias_cursadas": [
+        "Estadística",
+        "Historia",
+        "Álgebra",
+        "Química",
+        "Inglés"
+      ]
+    },
+    "contacto": {
+      "telefono": "5545351479",
+      "direccion": {
+        "calle": "Calle 129 #391",
+        "ciudad": "Guadalajara",
+        "codigo_postal": "76542"
+      }
+    },
+    "fecha_inscripcion": "2020-08-05",
+    "activo": true
+  },
+  {
+    "_id": "EST-1010",
+    "datos_personales": {
+      "nombre": "Isabella",
+      "apellido": "Flores",
+      "edad": 30,
+      "correo": "isabella.flores10@universidad.edu.mx"
+    },
+    "academico": {
+      "carrera": "Biología",
+      "semestre": 1,
+      "promedio": 8.4,
+      "materias_cursadas": [
+        "Programación",
+        "Historia",
+        "Base de Datos",
+        "Economía"
+      ]
+    },
+    "contacto": {
+      "telefono": "5575579548",
+      "direccion": {
+        "calle": "Calle 5 #58",
+        "ciudad": "Monterrey",
+        "codigo_postal": "50306"
+      }
+    },
+    "fecha_inscripcion": "2021-05-05",
+    "activo": true
+  },
+  {
+    "_id": "EST-1011",
+    "datos_personales": {
+      "nombre": "Lucía",
+      "apellido": "Morales",
+      "edad": 30,
+      "correo": "lucía.morales11@universidad.edu.mx"
+    },
+    "academico": {
+      "carrera": "Biología",
+      "semestre": 3,
+      "promedio": 6.51,
+      "materias_cursadas": [
+        "Álgebra",
+        "Ética",
+        "Base de Datos"
+      ]
+    },
+    "contacto": {
+      "telefono": "5573791320",
+      "direccion": {
+        "calle": "Calle 141 #85",
+        "ciudad": "Monterrey",
+        "codigo_postal": "79163"
+      }
+    },
+    "fecha_inscripcion": "2024-11-21",
+    "activo": false
+  },
+  {
+    "_id": "EST-1012",
+    "datos_personales": {
+      "nombre": "Lucía",
+      "apellido": "Morales",
+      "edad": 25,
+      "correo": "lucía.morales12@universidad.edu.mx"
+    },
+    "academico": {
+      "carrera": "Biología",
+      "semestre": 8,
+      "promedio": 6.48,
+      "materias_cursadas": [
+        "Base de Datos",
+        "Química",
+        "Inglés",
+        "Historia"
+      ]
+    },
+    "contacto": {
+      "telefono": "5540158366",
+      "direccion": {
+        "calle": "Calle 17 #174",
+        "ciudad": "CDMX",
+        "codigo_postal": "87110"
+      }
+    },
+    "fecha_inscripcion": "2023-02-08",
+    "activo": true
+  },
+  {
+    "_id": "EST-1013",
+    "datos_personales": {
+      "nombre": "Valentina",
+      "apellido": "Hernández",
+      "edad": 21,
+      "correo": "valentina.hernández13@universidad.edu.mx"
+    },
+    "academico": {
+      "carrera": "Ingeniería Civil",
+      "semestre": 1,
+      "promedio": 9.44,
+      "materias_cursadas": [
+        "Álgebra",
+        "Estadística",
+        "Cálculo"
+      ]
+    },
+    "contacto": {
+      "telefono": "5519510312",
+      "direccion": {
+        "calle": "Calle 132 #122",
+        "ciudad": "Monterrey",
+        "codigo_postal": "97684"
+      }
+    },
+    "fecha_inscripcion": "2022-09-21",
+    "activo": true
+  },
+  {
+    "_id": "EST-1014",
+    "datos_personales": {
+      "nombre": "Diego",
+      "apellido": "López",
+      "edad": 28,
+      "correo": "diego.lópez14@universidad.edu.mx"
+    },
+    "academico": {
+      "carrera": "Contaduría",
+      "semestre": 6,
+      "promedio": 7.69,
+      "materias_cursadas": [
+        "Física",
+        "Ética",
+        "Inglés",
+        "Base de Datos",
+        "Álgebra",
+        "Cálculo"
+      ]
+    },
+    "contacto": {
+      "telefono": "5572682989",
+      "direccion": {
+        "calle": "Calle 187 #28",
+        "ciudad": "CDMX",
+        "codigo_postal": "17944"
+      }
+    },
+    "fecha_inscripcion": "2022-04-04",
+    "activo": true
+  },
+  {
+    "_id": "EST-1015",
+    "datos_personales": {
+      "nombre": "Fernando",
+      "apellido": "Díaz",
+      "edad": 26,
+      "correo": "fernando.díaz15@universidad.edu.mx"
+    },
+    "academico": {
+      "carrera": "Comunicación",
+      "semestre": 3,
+      "promedio": 7.69,
+      "materias_cursadas": [
+        "Física",
+        "Base de Datos",
+        "Estadística"
+      ]
+    },
+    "contacto": {
+      "telefono": "5547385696",
+      "direccion": {
+        "calle": "Calle 119 #128",
+        "ciudad": "CDMX",
+        "codigo_postal": "68082"
+      }
+    },
+    "fecha_inscripcion": "2024-07-12",
+    "activo": true
+  }
+]
