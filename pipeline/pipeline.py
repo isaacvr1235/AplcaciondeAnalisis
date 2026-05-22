@@ -3,7 +3,7 @@ from data.data import DataSplitter
 
 class Pipeline:
 
-    def _init_(self):
+    def __init__(self):
         self.pasos = []
         self.modelo = None
         self.metricas = None

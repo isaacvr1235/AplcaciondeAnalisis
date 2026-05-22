@@ -1,0 +1,319 @@
+[
+  {
+    "_id": "CUR-200",
+    "info": {
+      "nombre": "Cálculo",
+      "departamento": "Ciencias Básicas",
+      "creditos": 6
+    },
+    "horario": [
+      {
+        "dia": "Viernes",
+        "hora_inicio": "07:00",
+        "hora_fin": "09:00"
+      }
+    ],
+    "profesor": {
+      "nombre": "Mtro. Javier Sánchez",
+      "titulo": "Maestría"
+    },
+    "cupo_maximo": 26,
+    "inscritos": 22
+  },
+  {
+    "_id": "CUR-201",
+    "info": {
+      "nombre": "Álgebra",
+      "departamento": "Ciencias Básicas",
+      "creditos": 10
+    },
+    "horario": [
+      {
+        "dia": "Martes",
+        "hora_inicio": "13:00",
+        "hora_fin": "15:00"
+      }
+    ],
+    "profesor": {
+      "nombre": "Ing. Ricardo Gómez",
+      "titulo": "Maestría"
+    },
+    "cupo_maximo": 29,
+    "inscritos": 23
+  },
+  {
+    "_id": "CUR-202",
+    "info": {
+      "nombre": "Programación",
+      "departamento": "Humanidades",
+      "creditos": 6
+    },
+    "horario": [
+      {
+        "dia": "Viernes",
+        "hora_inicio": "09:00",
+        "hora_fin": "11:00"
+      },
+      {
+        "dia": "Jueves",
+        "hora_inicio": "09:00",
+        "hora_fin": "11:00"
+      },
+      {
+        "dia": "Lunes",
+        "hora_inicio": "09:00",
+        "hora_fin": "11:00"
+      }
+    ],
+    "profesor": {
+      "nombre": "Dr. Valentina Rivera",
+      "titulo": "Licenciatura"
+    },
+    "cupo_maximo": 21,
+    "inscritos": 33
+  },
+  {
+    "_id": "CUR-203",
+    "info": {
+      "nombre": "Física",
+      "departamento": "Ciencias Sociales",
+      "creditos": 6
+    },
+    "horario": [
+      {
+        "dia": "Lunes",
+        "hora_inicio": "15:00",
+        "hora_fin": "17:00"
+      },
+      {
+        "dia": "Viernes",
+        "hora_inicio": "15:00",
+        "hora_fin": "17:00"
+      }
+    ],
+    "profesor": {
+      "nombre": "Dr. Diego Martínez",
+      "titulo": "Doctorado"
+    },
+    "cupo_maximo": 22,
+    "inscritos": 29
+  },
+  {
+    "_id": "CUR-204",
+    "info": {
+      "nombre": "Química",
+      "departamento": "Ciencias Básicas",
+      "creditos": 6
+    },
+    "horario": [
+      {
+        "dia": "Martes",
+        "hora_inicio": "13:00",
+        "hora_fin": "15:00"
+      }
+    ],
+    "profesor": {
+      "nombre": "Dr. Valentina Martínez",
+      "titulo": "Maestría"
+    },
+    "cupo_maximo": 38,
+    "inscritos": 28
+  },
+  {
+    "_id": "CUR-205",
+    "info": {
+      "nombre": "Historia",
+      "departamento": "Humanidades",
+      "creditos": 6
+    },
+    "horario": [
+      {
+        "dia": "Miércoles",
+        "hora_inicio": "17:00",
+        "hora_fin": "19:00"
+      },
+      {
+        "dia": "Viernes",
+        "hora_inicio": "17:00",
+        "hora_fin": "19:00"
+      },
+      {
+        "dia": "Lunes",
+        "hora_inicio": "17:00",
+        "hora_fin": "19:00"
+      }
+    ],
+    "profesor": {
+      "nombre": "Ing. Javier López",
+      "titulo": "Licenciatura"
+    },
+    "cupo_maximo": 40,
+    "inscritos": 19
+  },
+  {
+    "_id": "CUR-206",
+    "info": {
+      "nombre": "Inglés",
+      "departamento": "Ciencias Sociales",
+      "creditos": 4
+    },
+    "horario": [
+      {
+        "dia": "Miércoles",
+        "hora_inicio": "07:00",
+        "hora_fin": "09:00"
+      },
+      {
+        "dia": "Lunes",
+        "hora_inicio": "07:00",
+        "hora_fin": "09:00"
+      }
+    ],
+    "profesor": {
+      "nombre": "Dr. Diego Hernández",
+      "titulo": "Licenciatura"
+    },
+    "cupo_maximo": 28,
+    "inscritos": 14
+  },
+  {
+    "_id": "CUR-207",
+    "info": {
+      "nombre": "Ética",
+      "departamento": "Humanidades",
+      "creditos": 6
+    },
+    "horario": [
+      {
+        "dia": "Lunes",
+        "hora_inicio": "11:00",
+        "hora_fin": "13:00"
+      },
+      {
+        "dia": "Martes",
+        "hora_inicio": "11:00",
+        "hora_fin": "13:00"
+      }
+    ],
+    "profesor": {
+      "nombre": "Lic. Isabella Ramírez",
+      "titulo": "Licenciatura"
+    },
+    "cupo_maximo": 29,
+    "inscritos": 29
+  },
+  {
+    "_id": "CUR-208",
+    "info": {
+      "nombre": "Economía",
+      "departamento": "Humanidades",
+      "creditos": 4
+    },
+    "horario": [
+      {
+        "dia": "Viernes",
+        "hora_inicio": "15:00",
+        "hora_fin": "17:00"
+      },
+      {
+        "dia": "Lunes",
+        "hora_inicio": "15:00",
+        "hora_fin": "17:00"
+      },
+      {
+        "dia": "Miércoles",
+        "hora_inicio": "15:00",
+        "hora_fin": "17:00"
+      }
+    ],
+    "profesor": {
+      "nombre": "Mtro. Pedro Martínez",
+      "titulo": "Doctorado"
+    },
+    "cupo_maximo": 37,
+    "inscritos": 14
+  },
+  {
+    "_id": "CUR-209",
+    "info": {
+      "nombre": "Biología",
+      "departamento": "Humanidades",
+      "creditos": 6
+    },
+    "horario": [
+      {
+        "dia": "Miércoles",
+        "hora_inicio": "17:00",
+        "hora_fin": "19:00"
+      },
+      {
+        "dia": "Martes",
+        "hora_inicio": "17:00",
+        "hora_fin": "19:00"
+      }
+    ],
+    "profesor": {
+      "nombre": "Ing. Diego Sánchez",
+      "titulo": "Maestría"
+    },
+    "cupo_maximo": 21,
+    "inscritos": 12
+  },
+  {
+    "_id": "CUR-210",
+    "info": {
+      "nombre": "Estadística",
+      "departamento": "Humanidades",
+      "creditos": 6
+    },
+    "horario": [
+      {
+        "dia": "Jueves",
+        "hora_inicio": "07:00",
+        "hora_fin": "09:00"
+      },
+      {
+        "dia": "Miércoles",
+        "hora_inicio": "07:00",
+        "hora_fin": "09:00"
+      },
+      {
+        "dia": "Lunes",
+        "hora_inicio": "07:00",
+        "hora_fin": "09:00"
+      }
+    ],
+    "profesor": {
+      "nombre": "Ing. Carlos Rivera",
+      "titulo": "Maestría"
+    },
+    "cupo_maximo": 37,
+    "inscritos": 32
+  },
+  {
+    "_id": "CUR-211",
+    "info": {
+      "nombre": "Base de Datos",
+      "departamento": "Ciencias Básicas",
+      "creditos": 6
+    },
+    "horario": [
+      {
+        "dia": "Viernes",
+        "hora_inicio": "07:00",
+        "hora_fin": "09:00"
+      },
+      {
+        "dia": "Lunes",
+        "hora_inicio": "07:00",
+        "hora_fin": "09:00"
+      }
+    ],
+    "profesor": {
+      "nombre": "Dr. Isabella Rodríguez",
+      "titulo": "Licenciatura"
+    },
+    "cupo_maximo": 37,
+    "inscritos": 14
+  }
+]

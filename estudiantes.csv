@@ -1,0 +1,121 @@
+﻿ID,Nombre,Edad,Carrera,Promedio
+1001,Miguel Sánchez 0,19,Derecho,8.54
+1002,Luis Martínez 1,24,Contaduría,9.32
+1003,Alejandro Reyes 2,24,Psicología,6.18
+1004,Ricardo Mendoza 3,27,Contaduría,7.33
+1005,Gabriela Ortiz 4,25,Medicina,6.52
+1006,Isabella Flores 5,26,Psicología,9.92
+1007,,22,Medicina,6.65
+1008,Lorena Espinoza 7,26,Medicina,7.77
+1009,José Pérez 8,24,Comunicación,8.82
+1010,Álvaro Delgado 9,28,Arquitectura,8.12
+1011,,29,Comunicación,6.45
+1012,María López 11,19,Comunicación,8.12
+1013,Luis Martínez 12,28,Contaduría,8.76
+1014,José Pérez 13,26,Ingeniería,6.6
+1015,Sebastián Vargas 14,30,Medicina,8.12
+1016,Gabriela Ortiz 15,22,Ingeniería,7.48
+1017,Beatriz Peña 16,30,Comunicación,8.21
+1018,Cecilia Gómez 17,28,Arquitectura,8.12
+1019,Luis Martínez 18,23,Medicina,6.17
+1020,Arturo Sandoval 19,19,Psicología,7.46
+1021,Lucía Castro 20,22,Psicología,9.73
+1022,Lorena Espinoza 21,24,Psicología,9.89
+1023,Paola Vega 22,20,Contaduría,6.16
+1024,Gabriela Ortiz 23,25,Derecho,7.43
+1025,Adriana Romero 24,18,Comunicación,8.73
+1026,Álvaro Delgado 25,24,Derecho,8.67
+1027,Alejandro Reyes 26,29,Administración,7.41
+1028,Ana García 27,22,Contaduría,8.24
+1029,Camila Díaz 28,24,Psicología,9.5
+1030,,30,Medicina,9.9
+1031,Diego Álvarez 30,20,Contaduría,9.0
+1032,Alejandro Reyes 31,26,Medicina,9.7
+1033,,19,Ingeniería,6.95
+1034,Sebastián Vargas 33,28,Ingeniería,6.65
+1035,Diego Álvarez 34,22,Medicina,9.2
+1036,Valentina Torres 35,28,Psicología,6.71
+1037,José Pérez 36,26,Derecho,7.65
+1038,Daniela Medina 37,27,Comunicación,6.72
+1039,Valentina Torres 38,21,Contaduría,9.7
+1040,Valeria Rojas 39,20,Contaduría,9.13
+1041,Valeria Rojas 40,23,Psicología,7.65
+1042,Cecilia Gómez 41,30,Comunicación,8.68
+1043,,20,Ingeniería,8.94
+1044,María López 43,26,Derecho,6.99
+1045,Hernán Guerrero 44,30,Comunicación,6.64
+1046,Lorena Espinoza 45,26,Medicina,8.81
+1047,Miguel Sánchez 46,18,Comunicación,7.53
+1048,Daniela Medina 47,27,Administración,8.12
+1049,José Pérez 48,24,Contaduría,7.88
+1050,Arturo Sandoval 49,25,Administración,6.8
+1051,Natalia Cruz 50,18,Medicina,9.67
+1052,Gustavo Paredes 51,24,Medicina,7.4
+1053,Emilio Herrera 52,23,Derecho,9.28
+1054,Verónica Molina 53,30,Psicología,9.49
+1055,Lucía Castro 54,22,Administración,6.89
+1056,Sofía Rodríguez 55,21,Psicología,8.64
+1057,María López 56,18,Ingeniería,7.59
+1058,Gabriela Ortiz 57,21,Ingeniería,7.11
+1059,,27,Arquitectura,6.28
+1060,José Pérez 59,19,Ingeniería,9.09
+1061,Gabriela Ortiz 60,19,Medicina,7.4
+1062,Valentina Torres 61,29,Contaduría,8.04
+1063,Daniela Medina 62,25,Derecho,8.72
+1064,Alejandro Reyes 63,19,Ingeniería,9.37
+1065,Hernán Guerrero 64,30,Medicina,8.12
+1066,Emilio Herrera 65,26,Derecho,6.11
+1067,Camila Díaz 66,30,Medicina,9.51
+1068,Emilio Herrera 67,20,Medicina,7.04
+1069,,20,Psicología,8.32
+1070,Sebastián Vargas 69,28,Comunicación,9.93
+1071,Alejandro Reyes 70,25,Medicina,6.15
+1072,Sofía Rodríguez 71,26,Medicina,8.39
+1073,,20,Medicina,7.38
+1074,Camila Díaz 73,22,Medicina,9.15
+1075,Lorena Espinoza 74,26,Comunicación,7.75
+1076,Ricardo Mendoza 75,27,Arquitectura,9.94
+1077,Camila Díaz 76,24,Administración,8.12
+1078,,21,Psicología,9.6
+1079,Daniela Medina 78,26,Arquitectura,6.76
+1080,Alejandro Reyes 79,30,Psicología,6.18
+1081,Arturo Sandoval 80,29,Administración,7.74
+1082,Gabriela Ortiz 81,29,Comunicación,8.08
+1083,Mariana Ruiz 82,21,Derecho,9.23
+1084,,29,Administración,8.75
+1085,Gabriela Ortiz 84,22,Contaduría,9.76
+1086,María López 85,24,Arquitectura,8.95
+1087,Mariana Ruiz 86,28,Medicina,6.79
+1088,Rodrigo Aguilar 87,28,Ingeniería,7.73
+1089,Alejandro Reyes 88,24,Contaduría,9.8
+1090,Sofía Rodríguez 89,25,Medicina,9.68
+1091,Sebastián Vargas 90,26,Medicina,8.49
+1092,Verónica Molina 91,25,Psicología,8.65
+1093,Mariana Ruiz 92,19,Medicina,6.5
+1094,Sebastián Vargas 93,21,Derecho,9.6
+1095,Ernesto Fuentes 94,21,Medicina,8.03
+1096,Rodrigo Aguilar 95,19,Medicina,8.67
+1097,Hernán Guerrero 96,23,Psicología,8.12
+1098,Andrés Ramírez 97,18,Arquitectura,8.79
+1099,,27,Administración,8.12
+1100,Isabella Flores 99,26,Derecho,6.77
+1101,,21,Contaduría,8.66
+1102,Arturo Sandoval 101,27,Administración,7.52
+1103,Lorena Espinoza 102,21,Ingeniería,8.99
+1104,Fernanda Jiménez 103,18,Administración,6.7
+1105,Álvaro Delgado 104,19,Medicina,8.28
+1106,Francisco Ríos 105,29,Derecho,7.62
+1107,Álvaro Delgado 106,28,Administración,9.33
+1108,Rodrigo Aguilar 107,18,Medicina,7.22
+1109,Emilio Herrera 108,21,Medicina,6.84
+1110,,19,Derecho,9.14
+1111,Isabella Flores 110,18,Administración,8.12
+1112,Beatriz Peña 111,23,Administración,7.29
+1113,Ernesto Fuentes 112,19,Psicología,8.12
+1114,José Pérez 113,26,Arquitectura,8.7
+1115,Carlos Hernández 114,21,Medicina,8.04
+1116,Miguel Sánchez 115,22,Administración,9.17
+1117,Andrés Ramírez 116,28,Medicina,8.12
+1118,Camila Díaz 117,24,Administración,8.94
+1119,Francisco Ríos 118,21,Ingeniería,8.64
+1120,Cecilia Gómez 119,26,Medicina,7.14
