@@ -61,10 +61,22 @@ def opcion_cargar_archivo():
     ext = os.path.splitext(ruta)[1].lower()
     hoja = None
     if ext in (".xlsx", ".xls"):
-        import pandas as pd
-        xls = pd.ExcelFile(ruta)
-        hojas = xls.sheet_names
+        try:
+            import pandas as pd
+            xls = pd.ExcelFile(ruta)
+            hojas = xls.sheet_names
+        except ValueError:
+            mostrar_error("El archivo parece estar corrupto o no tiene un formato de Excel válido.")
+            return
+        except ImportError:
+            mostrar_error("Falta la librería openpyxl o pandas para leer archivos Excel.")
+            return
+        except Exception as e:
+            mostrar_error(f"Error al inspeccionar el archivo Excel: {e}")
+            return
+            
         if len(hojas) > 1:
+            
             print(f"\n  El archivo tiene {len(hojas)} hojas: {hojas}")
             opciones_hojas = {str(i+1): h for i, h in enumerate(hojas)}
             opciones_hojas[str(len(hojas)+1)] = "Cargar todas las hojas por separado"
@@ -84,7 +96,10 @@ def opcion_cargar_archivo():
                 _preguntar_eda_post_carga()
                 return
             else:
-                hoja = opciones_hojas[sel]
+                hoja = opciones_hojas.get(sel)
+                if not hoja:
+                    mostrar_error("Opción de hoja no válida.")
+                    return
 
     # Cargar archivo
     try:
