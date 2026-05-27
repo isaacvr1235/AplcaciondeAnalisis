@@ -71,10 +71,35 @@ def pedir_input(mensaje, default=None, validar=None, opciones=None):
                 print(f"  {Color.warn('⚠')} Opciones válidas: {', '.join(opciones)}")
                 continue
         if validar and not validar(valor):
+            print(f"  {Color.warn('⚠')} Entrada inválida. Por favor verifique el formato.")
             continue
         return valor
 
-
+def pedir_entero(mensaje, default=None):
+    """
+    Solicita un input y asegura que sea un número entero válido.
+    No deja avanzar al usuario hasta que ingrese un número.
+    """
+    sufijo = f" [{default}]" if default else ""
+    while True:
+        valor = input(f"  {mensaje}{sufijo}: ").strip()
+        
+        # Si presiona enter y hay default
+        if not valor and default is not None:
+            return int(default)
+            
+        # Si presiona enter sin default
+        if not valor:
+            print(f"  {Color.warn('⚠')} Este campo es obligatorio.")
+            continue
+            
+        # Intento de conversión a entero
+        try:
+            numero = int(valor)
+            return numero
+        except ValueError:
+            print(f"  {Color.warn('⚠')} Por favor, ingrese un número entero válido (no letras ni símbolos).")
+            
 def pedir_si_no(mensaje, default="s"):
     """Pregunta sí/no y retorna True/False."""
     sufijo = "[S/n]" if default == "s" else "[s/N]"

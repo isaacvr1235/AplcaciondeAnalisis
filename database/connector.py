@@ -221,27 +221,35 @@ class ConectorSQL:
             mostrar_error("No hay conexión activa.")
             return []
 
-        if self.motor == "SQLite":
-            cur = self.conexion.cursor()
-            cur.execute("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name;")
-            tablas = [r[0] for r in cur.fetchall()]
+        try:
+            if self.motor == "SQLite":
+                cur = self.conexion.cursor()
+                cur.execute("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name;")
+                tablas = [r[0] for r in cur.fetchall()]
 
-        elif self.motor == "MySQL":
-            cur = self.conexion.cursor()
-            cur.execute("SHOW TABLES;")
-            tablas = [list(r.values())[0] for r in cur.fetchall()]
+            elif self.motor == "MySQL":
+                cur = self.conexion.cursor()
+                cur.execute("SHOW TABLES;")
+                tablas = [list(r.values())[0] for r in cur.fetchall()]
 
-        elif self.motor == "PostgreSQL":
-            cur = self.conexion.cursor()
-            cur.execute("""
-                SELECT table_name FROM information_schema.tables
-                WHERE table_schema = 'public' ORDER BY table_name;
-            """)
-            tablas = [r[0] for r in cur.fetchall()]
-        else:
-            tablas = []
+            elif self.motor == "PostgreSQL":
+                cur = self.conexion.cursor()
+                cur.execute("""
+                    SELECT table_name FROM information_schema.tables
+                    WHERE table_schema = 'public' ORDER BY table_name;
+                """)
+                tablas = [r[0] for r in cur.fetchall()]
+            else:
+                tablas = []
 
-        return tablas
+            return tablas
+            
+        except Exception as e:
+            mostrar_error("Se perdió la comunicación con la base de datos al listar las tablas.")
+            print(f"  Detalle técnico: {e}")
+            # Si la conexión se cayó, es buena práctica forzar el cierre en el sistema
+            self.cerrar() 
+            return []
 
     def cargar_tabla(self, tabla, nombre=None):
         """Lee una tabla completa y retorna un Dataset."""
@@ -249,22 +257,31 @@ class ConectorSQL:
             mostrar_error("No hay conexión activa.")
             return None
 
-        if self._engine:
-            df = pd.read_sql_table(tabla, self._engine)
-        elif self.motor == "SQLite":
-            df = pd.read_sql_query(f"SELECT * FROM [{tabla}]", self.conexion)
-        else:
-            df = pd.read_sql_query(f"SELECT * FROM \"{tabla}\"", self.conexion)
-
-        nombre = nombre or tabla
-        ds = Dataset(
-            nombre=nombre,
-            datos=df,
-            origen=f"{self.motor}:{tabla}",
-            metadata={"formato": "SQL", "motor": self.motor, "tabla": tabla}
-        )
-        mostrar_exito(f"Tabla '{tabla}' cargada  [{df.shape[0]} filas × {df.shape[1]} columnas]")
-        return ds
+        mostrar_info(f"Intentando cargar la tabla '{tabla}'...")
+        
+        try:
+            if self._engine:
+                df = pd.read_sql_table(tabla, self._engine)
+            elif self.motor == "SQLite":
+                df = pd.read_sql_query(f"SELECT * FROM [{tabla}]", self.conexion)
+            else:
+                df = pd.read_sql_query(f"SELECT * FROM \"{tabla}\"", self.conexion)
+                
+            nombre = nombre or tabla
+            ds = Dataset(
+                nombre=nombre,
+                datos=df,
+                origen=f"{self.motor}:{tabla}",
+                metadata={"formato": "SQL", "motor": self.motor, "tabla": tabla}
+            )
+            mostrar_exito(f"Tabla '{tabla}' cargada  [{df.shape[0]} filas × {df.shape[1]} columnas]")
+            return ds
+            
+        except Exception as e:
+            mostrar_error(f"Error al leer la tabla '{tabla}'.")
+            mostrar_advertencia(f"Causa posible: Falta de permisos, tabla corrupta o desconexión repentina.")
+            print(f"  Detalle técnico: {e}")
+            return None
 
     def ejecutar_query(self, query, nombre="query_result"):
         """Ejecuta una consulta SQL y retorna un Dataset."""

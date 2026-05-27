@@ -22,7 +22,13 @@ from menu.scraping_menu import wizard_scraping
 from utils.helpers import (
     titulo_seccion, mostrar_exito, mostrar_error, mostrar_advertencia,
     mostrar_info, pedir_input, pedir_si_no, pedir_opcion, pausar,
+    validar_ruta_archivo, SEPARATOR, pedir_entero
+)
+from utils.helpers import (
+    titulo_seccion, mostrar_exito, mostrar_error, mostrar_advertencia,
+    mostrar_info, pedir_input, pedir_si_no, pedir_opcion, pausar,
     validar_ruta_archivo, SEPARATOR
+
 )
 
 OUTPUT = os.path.join(DIR, "output")
@@ -80,26 +86,31 @@ def opcion_cargar_archivo():
             print(f"\n  El archivo tiene {len(hojas)} hojas: {hojas}")
             opciones_hojas = {str(i+1): h for i, h in enumerate(hojas)}
             opciones_hojas[str(len(hojas)+1)] = "Cargar todas las hojas por separado"
-            sel = pedir_opcion(opciones_hojas, "¿Qué hoja desea cargar?")
+            
+            # Iniciamos el bucle infinito para obligar a una respuesta válida
+            while True:
+                sel = pedir_opcion(opciones_hojas, "¿Qué hoja desea cargar?")
 
-            if sel == str(len(hojas)+1):
-                # Cargar todas
-                for h in hojas:
-                    ds = loader.cargar_excel(ruta, hoja=h)
-                    clave = _generar_clave(ds.nombre)
-                    datasets_cargados[clave] = ds
-                    ds.info()
-                    print(f"  Vista previa de '{h}':")
-                    print(ds.head(5).to_string(index=False))
-                    print()
-                mostrar_exito(f"Se cargaron {len(hojas)} hojas a memoria.")
-                _preguntar_eda_post_carga()
-                return
-            else:
-                hoja = opciones_hojas.get(sel)
-                if not hoja:
-                    mostrar_error("Opción de hoja no válida.")
+                if sel == str(len(hojas)+1):
+                    # Cargar todas
+                    for h in hojas:
+                        ds = loader.cargar_excel(ruta, hoja=h)
+                        clave = _generar_clave(ds.nombre)
+                        datasets_cargados[clave] = ds
+                        ds.info()
+                        print(f"  Vista previa de '{h}':")
+                        print(ds.head(5).to_string(index=False))
+                        print()
+                    mostrar_exito(f"Se cargaron {len(hojas)} hojas a memoria.")
+                    _preguntar_eda_post_carga()
                     return
+                else:
+                    hoja = opciones_hojas.get(sel)
+                    if hoja:
+                        # Si la hoja es válida, rompemos el bucle y continuamos con la carga abajo
+                        break 
+                    else:
+                        mostrar_error("Opción de hoja no válida. Por favor, intente de nuevo.")
 
     # Cargar archivo
     try:
@@ -242,23 +253,11 @@ def opcion_nosql():
     """Simulación de datos NoSQL."""
     titulo_seccion("Simulación de datos con estructura NoSQL")
 
-    # Permitir configurar la cantidad de documentos
-    n_est = pedir_input("¿Cuántos documentos de estudiantes generar?", default="15")
-    n_cur = pedir_input("¿Cuántos documentos de cursos generar?", default="12")
-
-    try:
-        n_est = int(n_est)
-        n_cur = int(n_cur)
-    except ValueError:
-        mostrar_error("Los valores deben ser números enteros.")
-        return
-
-    seed_input = pedir_input("Semilla aleatoria (para reproducibilidad)", default="42")
-    try:
-        seed = int(seed_input)
-    except ValueError:
-        seed = 42
-
+  # Permitir configurar la cantidad de documentos forzando números enteros
+    n_est = pedir_entero("¿Cuántos documentos de estudiantes generar?", default="15")
+    n_cur = pedir_entero("¿Cuántos documentos de cursos generar?", default="12")
+    seed = pedir_entero("Semilla aleatoria (para reproducibilidad)", default="42")
+    
     sim = SimuladorNoSQL(seed=seed)
 
     print(f"\n  Generando {n_est} estudiantes y {n_cur} cursos...\n")

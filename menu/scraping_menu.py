@@ -7,7 +7,7 @@ Guía al usuario paso a paso sin nada hardcodeado.
 import pandas as pd
 from utils.helpers import (
     titulo_seccion, mostrar_exito, mostrar_error, mostrar_advertencia,
-    mostrar_info, pedir_input, pedir_si_no, pedir_opcion, SEPARATOR
+    mostrar_info, pedir_input, pedir_si_no, pedir_opcion, SEPARATOR, pedir_entero
 )
 from scraping.validators import (
     validar_url, verificar_sitio, detectar_tipo_pagina,
@@ -18,7 +18,6 @@ from scraping.extractor import Extractor
 from scraping.cleaner import Cleaner
 from scraping.exporter import Exporter
 from data.data import Dataset
-
 
 def wizard_scraping(datasets_cargados, output_dir="output"):
     """
@@ -196,27 +195,27 @@ def wizard_scraping(datasets_cargados, output_dir="output"):
 
         niveles = {"1": 1, "2": 2}
         if prof == "3":
-            n = pedir_input("Nivel de profundidad (1-5)", default="1")
-            try:
-                nivel = min(int(n), 5)
-            except ValueError:
-                nivel = 1
+            niveles = {"1": 1, "2": 2}
+        if prof == "3":
+            nivel = pedir_entero("Nivel de profundidad (1-5)", default="1")
+            nivel = min(nivel, 5) # Forzamos un máximo de 5 para no saturar la red
         else:
             nivel = niveles[prof]
 
-        max_pag = pedir_input("Máximo de páginas a visitar", default="20")
-        try:
-            max_pag = int(max_pag)
-        except ValueError:
-            max_pag = 20
+        max_pag = pedir_entero("Máximo de páginas a visitar", default="20")
 
         paginas = scraper.scraping_con_profundidad(url_final, profundidad=nivel,
                                                     max_paginas=max_pag)
-        # Extraer de cada página adicional (la primera ya se procesó)
-        for pag_url, pag_soup in paginas[1:]:
-            ext_pag = Extractor(pag_soup, url_base=pag_url)
-            for sel in seleccion:
-                todos_registros.extend(_extraer_por_opcion(ext_pag, sel, pag_soup, ""))
+        
+        # Blindaje: Verificar que paginas exista y sea una lista válida
+        if paginas:
+            for pag_url, pag_soup in paginas[1:]:
+                if pag_soup: # Verificar que el HTML se descargó bien y no es None
+                    ext_pag = Extractor(pag_soup, url_base=pag_url)
+                    for sel in seleccion:
+                        todos_registros.extend(_extraer_por_opcion(ext_pag, sel, pag_soup, ""))
+        else:
+            mostrar_advertencia("No se pudieron extraer páginas adicionales en la profundidad.")
 
     # ══════════════════════════════════════════
     # PASO 5: Paginación
@@ -231,18 +230,20 @@ def wizard_scraping(datasets_cargados, output_dir="output"):
         if pag_modo == "2":
             selector_next = pedir_input("Selector CSS del botón siguiente (ej: .next-page)")
 
-        max_pag = pedir_input("Máximo de páginas", default="5")
-        try:
-            max_pag = int(max_pag)
-        except ValueError:
-            max_pag = 5
+        max_pag = pedir_entero("Máximo de páginas", default="5")
 
         paginas = scraper.scraping_con_paginacion(url_final, selector_next=selector_next,
                                                     max_paginas=max_pag)
-        for pag_url, pag_soup in paginas[1:]:
-            ext_pag = Extractor(pag_soup, url_base=pag_url)
-            for sel in seleccion:
-                todos_registros.extend(_extraer_por_opcion(ext_pag, sel, pag_soup, ""))
+        
+        # Blindaje: Verificar que paginas exista
+        if paginas:
+            for pag_url, pag_soup in paginas[1:]:
+                if pag_soup:
+                    ext_pag = Extractor(pag_soup, url_base=pag_url)
+                    for sel in seleccion:
+                        todos_registros.extend(_extraer_por_opcion(ext_pag, sel, pag_soup, ""))
+        else:
+            mostrar_advertencia("No se encontró paginación o se perdió la conexión.")
 
     # ══════════════════════════════════════════
     # PASO 6: Limitación
@@ -255,13 +256,9 @@ def wizard_scraping(datasets_cargados, output_dir="output"):
         }, "¿Cuántos elementos conservar?")
 
         if lim == "2":
-            n = pedir_input("¿Cuántos?", default="100")
-            try:
-                n = int(n)
-                todos_registros = todos_registros[:n]
-                mostrar_info(f"Limitado a {n} registros.")
-            except ValueError:
-                pass
+            n = pedir_entero("¿Cuántos?", default="100")
+            todos_registros = todos_registros[:n]
+            mostrar_info(f"Limitado a {n} registros.")
 
     # ══════════════════════════════════════════
     # PASO 7: Limpieza
