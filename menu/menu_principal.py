@@ -25,12 +25,6 @@ from utils.helpers import (
     mostrar_info, pedir_input, pedir_si_no, pedir_opcion, pausar,
     validar_ruta_archivo, SEPARATOR, pedir_entero
 )
-from utils.helpers import (
-    titulo_seccion, mostrar_exito, mostrar_error, mostrar_advertencia,
-    mostrar_info, pedir_input, pedir_si_no, pedir_opcion, pausar,
-    validar_ruta_archivo, SEPARATOR
-
-)
 
 OUTPUT = os.path.join(DIR, "output")
 os.makedirs(OUTPUT, exist_ok=True)
@@ -370,7 +364,7 @@ def opcion_ver_datasets():
 # ══════════════════════════════════════════════════════════════
 
 def menu_principal():
-    menu_texto_DESPUES = """
+    menu_texto = """
 ╔══════════════════════════════════════════════════════════╗
 ║     APLICACIÓN DE ANÁLISIS DE DATOS — IPN / ESCOM       ║
 ╠══════════════════════════════════════════════════════════╣
@@ -388,20 +382,20 @@ def menu_principal():
 ╚══════════════════════════════════════════════════════════╝
 """
 
-    opciones_DESPUES = {
-    "1": opcion_cargar_archivo,
-    "2": opcion_conexion_sql,
-    "3": opcion_eda,
-    "4": opcion_nosql,
-    "5": opcion_webscraping,
-    "6": opcion_ver_datasets,
-    "7": lambda: opcion_modelos_supervisados(datasets_cargados),
-    "8": lambda: opcion_no_supervisado(datasets_cargados),
-}
+    opciones = {
+        "1": opcion_cargar_archivo,
+        "2": opcion_conexion_sql,
+        "3": opcion_eda,
+        "4": opcion_nosql,
+        "5": opcion_webscraping,
+        "6": opcion_ver_datasets,
+        "7": lambda: opcion_modelos_supervisados(datasets_cargados),
+        "8": lambda: opcion_no_supervisado(datasets_cargados),
+    }
 
     while True:
         print(menu_texto)
-        opcion = input("  Seleccione una opción [0-6]: ").strip()
+        opcion = input("  Seleccione una opción [0-8]: ").strip()
 
         if opcion == "0":
             print("\n  ¡Hasta luego!\n")
