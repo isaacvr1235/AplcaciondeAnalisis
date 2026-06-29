@@ -14,6 +14,7 @@ warnings.filterwarnings("ignore")
 DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, DIR)
 
+from menu.menu_extensiones import opcion_modelos_supervisados, opcion_no_supervisado
 from data.data import DataLoader, Dataset
 from visualization.visualizador import Visualizador
 from data.nosql_simulator import SimuladorNoSQL
@@ -369,7 +370,7 @@ def opcion_ver_datasets():
 # ══════════════════════════════════════════════════════════════
 
 def menu_principal():
-    menu_texto = """
+    menu_texto_DESPUES = """
 ╔══════════════════════════════════════════════════════════╗
 ║     APLICACIÓN DE ANÁLISIS DE DATOS — IPN / ESCOM       ║
 ╠══════════════════════════════════════════════════════════╣
@@ -380,18 +381,23 @@ def menu_principal():
 ║  4. Simulación de datos NoSQL                            ║
 ║  5. Web Scraping (datos no estructurados)                ║
 ║  6. Ver datasets cargados                                ║
+║  7. Comparar modelos supervisados [EXT. B]               ║
+║  8. Clustering y reducción de dimensionalidad [EXT. E]   ║
 ║  0. Salir                                                ║
 ║                                                          ║
 ╚══════════════════════════════════════════════════════════╝
 """
-    opciones = {
-        "1": opcion_cargar_archivo,
-        "2": opcion_conexion_sql,
-        "3": opcion_eda,
-        "4": opcion_nosql,
-        "5": opcion_webscraping,
-        "6": opcion_ver_datasets,
-    }
+
+    opciones_DESPUES = {
+    "1": opcion_cargar_archivo,
+    "2": opcion_conexion_sql,
+    "3": opcion_eda,
+    "4": opcion_nosql,
+    "5": opcion_webscraping,
+    "6": opcion_ver_datasets,
+    "7": lambda: opcion_modelos_supervisados(datasets_cargados),
+    "8": lambda: opcion_no_supervisado(datasets_cargados),
+}
 
     while True:
         print(menu_texto)
