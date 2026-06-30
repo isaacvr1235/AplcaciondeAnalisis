@@ -14,7 +14,8 @@ warnings.filterwarnings("ignore")
 DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, DIR)
 
-from menu.menu_extensiones import opcion_modelos_supervisados, opcion_no_supervisado
+from menu.menu_extensiones import opcion_no_supervisado
+from menu.api_menu import wizard_api
 from data.data import DataLoader, Dataset
 from visualization.visualizador import Visualizador
 from data.nosql_simulator import SimuladorNoSQL
@@ -327,6 +328,20 @@ def opcion_webscraping():
 
 
 # ══════════════════════════════════════════════════════════════
+# 7. EXTENSIÓN D — Integración de nueva fuente de datos (API)
+# ══════════════════════════════════════════════════════════════
+
+def opcion_api():
+    """Consume una API REST externa e incorpora el resultado al flujo."""
+    resultado = wizard_api(datasets_cargados, output_dir=OUTPUT)
+
+    if resultado:
+        for clave in resultado:
+            if clave in datasets_cargados:
+                _preguntar_eda_post_carga(clave)
+
+
+# ══════════════════════════════════════════════════════════════
 # 6. VER DATASETS
 # ══════════════════════════════════════════════════════════════
 
@@ -375,7 +390,7 @@ def menu_principal():
 ║  4. Simulación de datos NoSQL                            ║
 ║  5. Web Scraping (datos no estructurados)                ║
 ║  6. Ver datasets cargados                                ║
-║  7. Comparar modelos supervisados [EXT. B]               ║
+║  7. Integrar API externa [EXT. D]                        ║
 ║  8. Clustering y reducción de dimensionalidad [EXT. E]   ║
 ║  0. Salir                                                ║
 ║                                                          ║
@@ -389,7 +404,7 @@ def menu_principal():
         "4": opcion_nosql,
         "5": opcion_webscraping,
         "6": opcion_ver_datasets,
-        "7": lambda: opcion_modelos_supervisados(datasets_cargados),
+        "7": opcion_api,
         "8": lambda: opcion_no_supervisado(datasets_cargados),
     }
 

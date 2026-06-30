@@ -1,7 +1,12 @@
 """
 models/models.py
 Jerarquía de modelos ML con implementación real usando scikit-learn.
-Extensión B del Examen Extraordinario: comparación automática de modelos supervisados.
+
+NOTA: este módulo se desarrolló originalmente como Extensión B del Examen
+Extraordinario (comparación automática de modelos supervisados). Ya NO es
+la extensión presentada (se sustituyó por la Extensión D — integración de
+API externa, ver data/api_loader.py y menu/api_menu.py). Se conserva aquí
+como código funcional de respaldo.
 """
 
 from sklearn.tree import DecisionTreeClassifier

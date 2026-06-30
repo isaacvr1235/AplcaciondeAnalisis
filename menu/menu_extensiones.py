@@ -1,20 +1,22 @@
 """
 menu/menu_extensiones.py
-Opciones del menú para las Extensiones B y E del Examen Extraordinario.
+Opciones del menú para la Extensión E del Examen Extraordinario.
 
-  Extensión B — Comparación automática de modelos supervisados
   Extensión E — Clustering (KMeans) y reducción de dimensionalidad (PCA / t-SNE)
+
+NOTA: este archivo conserva opcion_modelos_supervisados() (comparación de
+modelos, antigua Extensión B) como código de respaldo, pero ya NO está
+conectado al menú principal. La extensión activa en su lugar es la D
+(integración de API externa, ver menu/api_menu.py).
 
 Para integrar al menú principal, agrega en menu/menu_principal.py:
 
-    from menu.menu_extensiones import opcion_modelos_supervisados, opcion_no_supervisado
+    from menu.menu_extensiones import opcion_no_supervisado
 
-Y en menu_principal() añade las nuevas entradas:
-    "7": opcion_modelos_supervisados,
+Y en menu_principal() añade la nueva entrada:
     "8": opcion_no_supervisado,
 
 Y en el texto del menú:
-    ║  7. Comparar modelos supervisados (Extensión B)          ║
     ║  8. Clustering y reducción de dimensionalidad (Ext. E)   ║
 """
 
@@ -43,7 +45,8 @@ os.makedirs(OUTPUT, exist_ok=True)
 
 
 # ══════════════════════════════════════════════════════════════
-# EXTENSIÓN B — Comparación de modelos supervisados
+# (Antigua) EXTENSIÓN B — Comparación de modelos supervisados
+# Conservada como código de respaldo; NO está conectada al menú activo.
 # ══════════════════════════════════════════════════════════════
 
 def opcion_modelos_supervisados(datasets_cargados):
